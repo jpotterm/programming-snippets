@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load dwaiter_tags dwaiter_form_image %}
+
+{% block meta_title %}{% firstof page.meta_title 'Blog' %}{% endblock %}
+{% block meta_description %}{{ page.meta_description }}{% endblock %}
+{% block meta_keywords %}{{ page.meta_keywords }}{% endblock %}
+
+{% block body_class %}blog-listing-page{% endblock %}
+
+{% block content %}
+    <div class="category__section">
+        <div class="page-width">
+            <div class="page-width-inner">
+                <div class="category__list">
+                    {% spaceless %}
+                        <a class="category {% if active_category == None %}category--active{% endif %}" href="?category=">All</a>
+                        {% for category in categories %}
+                            <a class="category {% if active_category.pk == category.pk %}category--active{% endif %}" href="?category={{ category.pk }}">{{ category.title }}</a>
+                        {% endfor %}
+                    {% endspaceless %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-width">
+        <div class="page-width-inner">
+            <div class="post__list">
+                {% for post in posts %}
+                    <div class="post">
+                        <a class="post__title" href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="page-width">
+        <div class="page-width-inner">
+            {% pagination posts 8 %}
+        </div>
+    </div>
+{% endblock %}

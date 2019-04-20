@@ -1,0 +1,9 @@
+{% load dwaiter_form_core %}
+
+<form method="post" enctype="multipart/form-data">
+    {% form_protect form %}
+    {% form_errors form %}
+    {% form_fields form %}
+
+    <input type="submit" value="Submit" />
+</form>

@@ -1,0 +1,12 @@
+.fluent-plugin-natural-width-image {
+    text-align: center;
+}
+
+.fluent-plugin-natural-width-image__image {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.fluent-plugin-natural-width-image--drop-shadow .fluent-plugin-natural-width-image__image {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,23 @@
+.django-messages > li {
+    text-align: center;
+    padding: 13px 0;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.django-messages > li.info {
+    background-color: #F5F5F5;;
+    color: #565656;
+}
+
+.django-messages > li.success {
+    background-color: #32B7C1;
+}
+
+.django-messages > li.warning {
+    background-color: #FFCC00;
+}
+
+.django-messages > li.error {
+    background-color: #D00000;
+}

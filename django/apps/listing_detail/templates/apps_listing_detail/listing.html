@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load dwaiter_tags %}
+
+{% block meta_title %}{% firstof page.meta_title 'Listing detail' %}{% endblock %}
+{% block meta_description %}{{ page.meta_description }}{% endblock %}
+{% block meta_keywords %}{{ page.meta_keywords }}{% endblock %}
+
+{% block body_class %}item-listing-page{% endblock %}
+
+{% block content %}
+    <div class="page-width">
+        <div class="page-width-inner">
+            <div class="post__list">
+                {% for item in items %}
+                    <a href="{{ item.get_absolute_url }}">{{ item.title }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="page-width">
+        <div class="page-width-inner">
+            {% pagination items 8 %}
+        </div>
+    </div>
+{% endblock %}

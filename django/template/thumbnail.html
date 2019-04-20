@@ -1,0 +1,20 @@
+{% load thumbnail %}
+
+{# Cover #}
+{% thumbnail item.image '100x100' crop='center' as thumb %}
+    <img src="{{ thumb.url }}" width="{{ thumb.width }}" height="{{ thumb.height }}" alt="" />
+{% endthumbnail %}
+
+{# Contain #}
+{% thumbnail work_item.logo '220x160' upscale=False as thumb %}
+    <img src="{{ thumb.url }}" width="{{ thumb.width }}" height="{{ thumb.height }}" alt="" style="margin:{{ thumb|margin:'245x160' }}" />
+{% endthumbnail %}
+
+{# Focus crop static #}
+{% image_focus_crop_thumbnail post.image 358 239 as thumb %}
+<img src="{{ thumb.url }}" width="{{ thumb.width }}" height="{{ thumb.height }}" alt="" />
+
+{# Focus crop dynamic #}
+{% load dwaiter_form_image %}
+<div {% image_focus_crop_background page.hero_background_image 1920 500 %}></div>
+<script src="/static/dwaiter_form/image/js/image_focus_crop_position.js"></script>

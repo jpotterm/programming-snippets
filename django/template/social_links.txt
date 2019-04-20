@@ -1,0 +1,14 @@
+Facebook
+    https://www.facebook.com/sharer.php?u={{ request.build_absolute_uri|urlencode }}&amp;t={{ post.title|urlencode }}
+    Open Graph Information
+        <meta property="og:title" content="ILI Survey" />
+        <meta property="og:description" content="A cool tool." />
+        <meta property="og:image" content="http://ilisurvey.dwaiter.com/static/images/facebook-thumb.png" />
+Twitter
+    https://twitter.com/share?text={{ post.title|urlencode }}&amp;url={{ request.build_absolute_uri|urlencode }}
+LinkedIn
+    https://www.linkedin.com/shareArticle?mini=true&url={{ request.build_absolute_uri|urlencode }}&title={{ post.title|urlencode }}&summary={{ post.content|striptags|truncatewords:20|urlencode }}
+Google Plus
+    https://plus.google.com/share?url={{ request.build_absolute_uri|urlencode }}
+Email
+    mailto:?body={{ request.build_absolute_uri|urlencode }}

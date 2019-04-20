@@ -1,0 +1,15 @@
+.fluent-plugin {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+@media (max-width: 600px) {
+    .fluent-plugin {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .fluent-plugin:not(.fluent-plugin-natural-width-image) + .fluent-plugin:not(.fluent-plugin--section-top):not(.fluent-plugin-natural-width-image):not(.fluent-plugin-full-width-image) {
+        padding-top: 0;
+    }
+}

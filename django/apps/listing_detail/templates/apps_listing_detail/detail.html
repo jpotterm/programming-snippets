@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block meta_title %}{% firstof item.meta_title item.title %}{% endblock %}
+{% block meta_description %}{{ item.meta_description }}{% endblock %}
+{% block meta_keywords %}{{ item.meta_keywords }}{% endblock %}
+
+{% block body_class %}item-detail-page{% endblock %}
+
+{% block content %}
+    <div class="page-width">
+        <div class="page-width-inner">
+            {{ item.title }}
+            {{ item.content|safe }}
+        </div>
+    </div>
+{% endblock %}
