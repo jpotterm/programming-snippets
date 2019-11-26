@@ -22,16 +22,12 @@ create table "table_name" (
 alter table "table_name"
     -- Add
     add column "text" text not null default '',
+    add unique ("one_id", "two_id"),
 
     -- Alter
-    alter column "text" drop not null,
     alter column "text" set not null,
+    alter column "text" drop not null,
 
     -- Drop
     drop column "text",
-
-    -- Constraint
-    add constraint unique ("one_id", "two_id"),
     drop constraint "constraint_name",
-
-
